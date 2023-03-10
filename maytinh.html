@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai tap may tinh</title>
+    <style>
+        table {
+            width: ;
+            text-align: center;
+        }
+
+        button {
+            background-color: #f56666;
+            width: 90%;
+            font-size: 14px;
+            border-radius: 5px;
+        }
+        input{
+            text-align: right;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+<table border="1px solid red">
+    <tr>
+        <th>
+            <button onclick="clearCalculator('c')">AC</button>
+        </th>
+        <th colspan="3" ><input id="display" type="text"></th>
+    </tr>
+    <tr>
+        <td>
+            <button class="bnt" onclick="inputButton('+')">+</button>
+        </td>
+        <td>
+            <button class="bnt" onclick="inputButton('1')">1</button>
+        </td>
+        <td>
+            <button class="bnt" onclick="inputButton('2')">2</button>
+        </td>
+        <td>
+            <button class="bnt" onclick="inputButton('3')">3</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button class="bnt" onclick="inputButton('-')">-</button>
+        </td>
+        <td>
+            <button class="bnt" onclick="inputButton('4')">4</button>
+        </td>
+        <td>
+            <button class="bnt" onclick="inputButton('5')">5</button>
+        </td>
+        <td>
+            <button class="bnt" onclick="inputButton('6')">6</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button class="bnt" onclick="inputButton('*')">*</button>
+        </td>
+        <td>
+            <button class="bnt" onclick="inputButton('7')">7</button>
+        </td>
+        <td>
+            <button class="bnt" onclick="inputButton('8')">8</button>
+        </td>
+        <td>
+            <button class="bnt" onclick="inputButton('9')">9</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button class="bnt" onclick="inputButton('/')">/</button>
+        </td>
+        <td>
+            <button class="bnt" onclick="inputButton('.')">.</button>
+        </td>
+        <td>
+            <button class="bnt" onclick="inputButton('0')">0</button>
+        </td>
+        <td>
+            <button class="bnt" onclick="equal('=')">=</button>
+        </td>
+    </tr>
+</table>
+<script>
+    //calculator
+    const numbers = document.getElementsByClassName('bnt');
+    const result = document.getElementById('display');
+    function inputButton(method) {
+        //console.log('button==', method);
+        document.getElementById('display').value += method;
+        //console.log('input :', document.getElementById('display').value)
+    }
+    function equal(){
+        let method = document.getElementById('display').value;
+        let result = eval(method);
+        document.getElementById('display').value = result;
+        //console.log(method)
+    }
+    function clearCalculator(){
+        document.getElementById('display').value = '';
+        //console.log(document.getElementById('display').value)
+    }
+</script>
+</body>
+</html>
